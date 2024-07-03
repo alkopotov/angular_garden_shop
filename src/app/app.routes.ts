@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import path from 'path';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { CatagoriesPageComponent } from './pages/catagories-page/catagories-page.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { SalesPageComponent } from './pages/sales-page/sales-page.component';
+import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
+import { CategoriesPageComponent } from './pages/categories-page/categories-page.component';
 
 export const routes: Routes = [
   {
@@ -12,10 +13,14 @@ export const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CatagoriesPageComponent
+    component: CategoriesPageComponent
   },
   {
     path: 'products',
+    component: ProductsPageComponent
+  },
+  {
+    path: 'products/:id',
     component: ProductsPageComponent
   },
   {
@@ -24,6 +29,10 @@ export const routes: Routes = [
   },
   {
     path: 'categories/:id',
-    component: CatagoriesPageComponent
+    component: CategoriesPageComponent
+  },
+  {
+    path: 'favorites',
+    component: FavoritesPageComponent
   }
 ];

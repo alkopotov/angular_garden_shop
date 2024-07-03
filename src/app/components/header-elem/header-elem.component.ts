@@ -14,10 +14,6 @@ export class HeaderElemComponent {
 
   public navLinks: any[] = [
     {
-      name: 'Main page',
-      link: '/',
-    },
-    {
       name: 'Categories',
       link: '/categories'
     },
@@ -28,6 +24,10 @@ export class HeaderElemComponent {
     {
       name: 'All Sales',
       link: '/sales'
+    },
+    {
+      name: 'Favorites',
+      link: '/favorites'
     }
   ];
 

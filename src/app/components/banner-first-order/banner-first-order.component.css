@@ -10,6 +10,7 @@
   justify-content: space-between;
   background: linear-gradient(261.47deg, #0B710B 32.63%, #339933 98.96%);
   border-radius: var(--radius-big);
+  margin-bottom: 80px;
 }
 
 .banner-first-order__title {

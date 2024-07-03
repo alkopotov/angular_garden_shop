@@ -1,0 +1,26 @@
+
+<section class="product-list">
+  @if(products) {
+    <div class="product-list__header">
+      @if(onMainPage) { 
+        <h2 class="product-list__title">{{title}}</h2>
+        <div class="product-list__header-line"></div>
+        <button class="product-list__button" routerLink="/products" (click)="handleClickAllSales()">All sales</button>
+      } @else {
+        <h1 class="product-list__title">{{title}}</h1> 
+      }
+      </div>
+      <div class="product-list__content">
+        @for(product of products; track $index) {
+          <app-product-card
+            [product]="product"
+          >
+          </app-product-card>
+        }
+      </div>
+  } @else {
+    <div class="product-list-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  }
+</section>
