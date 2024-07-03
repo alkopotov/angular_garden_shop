@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartStorageService } from '../../services/cart-storage.service';
 
 @Component({
   selector: 'app-basket-elem',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './basket-elem.component.css'
 })
 export class BasketElemComponent {
+
+  constructor(public cartStorageService: CartStorageService) { }
 
 }

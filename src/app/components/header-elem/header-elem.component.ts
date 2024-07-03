@@ -3,6 +3,7 @@ import { LogoIconComponent } from '../svg/logo-icon/logo-icon.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { BasketElemComponent } from '../basket-elem/basket-elem.component';
 
+
 @Component({
   selector: 'app-header-elem',
   standalone: true,
@@ -12,6 +13,7 @@ import { BasketElemComponent } from '../basket-elem/basket-elem.component';
 })
 export class HeaderElemComponent {
 
+  
   public navLinks: any[] = [
     {
       name: 'Categories',

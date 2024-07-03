@@ -57,4 +57,8 @@ export class DataSourceService {
     })
   }
 
+  public getProductById(id: number): Observable<Product> {
+    return this._http.get<Product>(`${this._baseUrl}/products/${id}`);
+  }
+
 }

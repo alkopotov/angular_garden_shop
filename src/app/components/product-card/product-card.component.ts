@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { DataSourceService, Product } from '../../services/data-source.service';
 import { CurrencyPipe, DecimalPipe, PercentPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { CartStorageService } from '../../services/cart-storage.service';
 
 @Component({
   selector: 'app-product-card',
@@ -13,7 +14,11 @@ import { Router } from '@angular/router';
 export class ProductCardComponent {
   @Input() public product: Product;
 
-  constructor(public dataSourceService: DataSourceService, private _router: Router) { }
+  constructor(
+    public dataSourceService: DataSourceService,
+    private _router: Router,
+    private _cartStorageService: CartStorageService
+  ) { }
 
   public buttonVisible: boolean = false;
 
@@ -40,7 +45,7 @@ export class ProductCardComponent {
   public handleAddToCart(event: any): void {
     event.preventDefault();
     event.stopPropagation();
-    console.log('add to cart', this.product);
+    this._cartStorageService.saveToCart(this.product.id, 1);
   }
 
   public handleClickOnCard(): void {

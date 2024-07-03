@@ -98,6 +98,13 @@
   color: var(--color-txt-black);
 }
 
+.product-card__initial-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-txt-grey);
+  text-decoration: line-through;
+}
+
 .product-card__favorite {
   position: absolute;
   right: 16px;

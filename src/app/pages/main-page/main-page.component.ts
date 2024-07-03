@@ -4,11 +4,12 @@ import { CategoryListComponent } from '../../components/category-list/category-l
 import { BannerFirstOrderComponent } from '../../components/banner-first-order/banner-first-order.component';
 import { DataSourceService } from '../../services/data-source.service';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
+import { FooterElemComponent } from '../../components/footer-elem/footer-elem.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [BannerDiscountComponent, CategoryListComponent, BannerFirstOrderComponent, ProductListComponent],
+  imports: [BannerDiscountComponent, CategoryListComponent, BannerFirstOrderComponent, ProductListComponent, FooterElemComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
