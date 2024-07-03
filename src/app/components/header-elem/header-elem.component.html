@@ -1,0 +1,16 @@
+<header class="header-wrapper">
+  <section class="header-content">
+  <a routerLink="/">
+    <app-logo-icon></app-logo-icon>
+  </a>
+  <nav class="nav">
+    @for(navLink of navLinks; track $index) {
+      <a [routerLink]="[navLink.link]" [routerLinkActive]="(navLink.name === 'Main page') ? '' : 'active'">{{navLink.name}}</a>
+    }
+  </nav>
+  <a href="">
+    <app-basket-elem></app-basket-elem>
+  </a>
+</section>
+</header>
+

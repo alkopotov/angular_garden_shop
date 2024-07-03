@@ -1,0 +1,19 @@
+.basket-elem-wrapper {
+  position: relative;
+}
+
+.basket-counter {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}

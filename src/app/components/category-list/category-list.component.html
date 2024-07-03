@@ -1,0 +1,26 @@
+@if(categories$ | async; as categories) {
+  <section class="category-list-wrapper">
+    <div class="category-list__header">   
+      <h2 class="category-list__title">Categories</h2>
+      @if(onMain) {
+        <div class="category-list__header-line"></div>
+        <button class="category-list__button" routerLink="/categories">All categories</button>
+      }
+    </div>
+    <div [class]="onMain ? 'category-list__content category-list__content_main' : 'category-list__content'">
+      @if(onMain) {
+        @for(category of categories.slice(0, 4); track $index) {
+          <app-category-card [category]="category"></app-category-card>
+        }
+      } @else {
+        @for(category of categories; track $index) {
+          <app-category-card [category]="category"></app-category-card>
+        }
+      }
+    </div>
+  </section>
+} @else {
+  <div class="category-list-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+}

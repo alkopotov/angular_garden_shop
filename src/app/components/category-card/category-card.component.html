@@ -1,0 +1,5 @@
+<div class="category-card__wrapper" (click)="onCardClick()">
+  <div class="category-card__image"
+       [style.background-image]="'url(' + dataSourceService.baseUrl + category.image + ')'"></div>
+  <p class="category-card__title">{{category.title}}</p>
+</div>

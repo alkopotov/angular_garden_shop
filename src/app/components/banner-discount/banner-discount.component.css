@@ -1,0 +1,29 @@
+.banner-discount {
+  width: 100%;
+  max-width: 1440px;
+  height: 600px;
+  margin: 0 auto;
+  background-image: url('../../../assets/images/banner-discount/background.jpg');
+  padding: 80px 40px 0 40px;
+}
+
+.banner-discount__title {
+  font-size: 96px;
+  font-weight: 700;
+  color: white;
+  line-height: 105.6px;
+}
+
+.banner-discount__button {
+  width: 218px;
+  height: 58px;
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
