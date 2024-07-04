@@ -16,6 +16,7 @@ export interface Product {
   title: string;
   price: number;
   discont_price: number | null;
+  description: string;
   image: string;
   createdAT: string;
   updatedAT: string;
@@ -57,8 +58,8 @@ export class DataSourceService {
     })
   }
 
-  public getProductById(id: number): Observable<Product> {
-    return this._http.get<Product>(`${this._baseUrl}/products/${id}`);
+  public getProductById(id: number): Observable<Product[]> {
+    return this._http.get<Product[]>(`${this._baseUrl}/products/${id}`);
   }
 
 }

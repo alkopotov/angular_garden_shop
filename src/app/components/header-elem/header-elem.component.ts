@@ -21,7 +21,7 @@ export class HeaderElemComponent {
     },
     {
       name: 'All Products',
-      link: '/products'
+      link: '/products/all'
     },
     {
       name: 'All Sales',
