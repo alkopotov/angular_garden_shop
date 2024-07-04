@@ -1,57 +1,57 @@
 @if(product$ | async; as product) {
-
-<main class="product-item-page">
-  <div class="product-item-page__image"
-    [style.background-image]="'url(' + dataSourceService.baseUrl + product[0].image + ')'">
-  </div>
-  <div class="product-item-page__content">
-
-    <h1 class="product-item-page__title">{{product[0].title}}</h1>
-
-    <div class="product-item-page__prices">
-      @if (product[0].discont_price) {
-      <span class="product-item-page__final-price">
-        {{product[0].discont_price * counter | currency: 'USD'}}
-      </span>
-      <span class="product-item-page__initial-price">
-        {{product[0].price * counter | currency: 'USD'}}
-      </span>
-      <div class="product-item-page__discount">
-        {{1 - product[0].discont_price / product[0].price | percent}}
+  @if(product[0]) {
+    
+    <main class="product-item-page">
+      <div class="product-item-page__image"
+        [style.background-image]="'url(' + dataSourceService.baseUrl + product[0].image + ')'">
       </div>
-      } @else {
-      <span class="product-item-page__final-price">
-        {{product[0].price * counter | currency: 'USD'}}
-      </span>
-      }
-    </div>
+      <div class="product-item-page__content">
 
-    <div class="product-item-page__basket-area">
-      <div class="product-item-page__counter">
-        <div class="product-item-page__counter-button-decr" (click)="counterDecrement()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <h1 class="product-item-page__title">{{product[0].title}}</h1>
+
+        <div class="product-item-page__prices">
+          @if (product[0].discont_price) {
+          <span class="product-item-page__final-price">
+            {{product[0].discont_price * counter | currency: 'USD'}}
+          </span>
+          <span class="product-item-page__initial-price">
+            {{product[0].price * counter | currency: 'USD'}}
+          </span>
+          <div class="product-item-page__discount">
+            {{1 - product[0].discont_price / product[0].price | percent}}
+          </div>
+          } @else {
+          <span class="product-item-page__final-price">
+            {{product[0].price * counter | currency: 'USD'}}
+          </span>
+          }
         </div>
-        {{counter}}
-        <div class="product-item-page__counter-button-incr" (click)="counterIncrement()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 5V19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+
+        <div class="product-item-page__basket-area">
+          <div class="product-item-page__counter">
+            <div class="product-item-page__counter-button-decr" (click)="counterDecrement()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            {{counter}}
+            <div class="product-item-page__counter-button-incr" (click)="counterIncrement()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5V19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <button class="product-item-page__button" (click)="handleAddToCart(product[0].id)">Add to cart</button>
         </div>
+
+        <p class="product-item-page__description">
+          {{product[0].description}}
+        </p>
+
       </div>
-      <button class="product-item-page__button" (click)="handleAddToCart(product[0].id)">Add to cart</button>
-    </div>
-
-    <p class="product-item-page__description">
-      {{product[0].description}}
-    </p>
-
-  </div>
-</main>
-
-
+    </main>
+  }
 } @else {
 <div class="product-item-page__spinner">
   <mat-spinner></mat-spinner>

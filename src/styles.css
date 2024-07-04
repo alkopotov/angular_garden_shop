@@ -6,8 +6,10 @@
   --color-green: #339933;
   --color-grey-divider: #DDDDDD;
   --color-txt-grey: #8B8B8B;
+  --color-light-grey: #F1F3F4;
   --radius-big: 12px;
   --radius-small: 6px;
+
 }
 
 * {

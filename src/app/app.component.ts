@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderElemComponent } from './components/header-elem/header-elem.component';
 import { isPlatformBrowser } from '@angular/common';
 import { CartStorageService } from './services/cart-storage.service';
+import { FooterElemComponent } from './components/footer-elem/footer-elem.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderElemComponent],
+  imports: [RouterOutlet, HeaderElemComponent, FooterElemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

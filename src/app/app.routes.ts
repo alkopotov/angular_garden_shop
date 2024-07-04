@@ -6,6 +6,7 @@ import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.co
 import { CategoriesPageComponent } from './pages/categories-page/categories-page.component';
 import { ProductListPageComponent } from './pages/product-list-page/product-list-page.component';
 import { ProductItemPageComponent } from './pages/product-item-page/product-item-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'favorites',
     component: FavoritesPageComponent
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent
   }
 ];
