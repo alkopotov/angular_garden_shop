@@ -44,6 +44,20 @@
   color: var(--color-txt-black);
 }
 
+.footer-elem__data-item-socials {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.footer-elem__data-item-socials a {
+ width: 43px;
+}
+
+.footer-elem__data-item-socials svg {
+  width: 43px;
+}
+
 .footer-elem__map {
   margin-top: 32px;
   width: 100%;
