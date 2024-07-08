@@ -6,11 +6,12 @@ import { CategoryData, DataSourceService } from '../../services/data-source.serv
 import { Observable, Subscription } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { ProductListComponent } from '../../components/product-list/product-list.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-category-products-page',
   standalone: true,
-  imports: [FilterElemComponent, AsyncPipe, ProductListComponent],
+  imports: [FilterElemComponent, AsyncPipe, ProductListComponent, MatProgressSpinnerModule],
   templateUrl: './category-products-page.component.html',
   styleUrl: './category-products-page.component.css'
 })
