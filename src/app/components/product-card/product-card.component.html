@@ -12,7 +12,7 @@
     @if(initialPrice !== finalPrice) {
       <span class="product-card__initial-price">{{initialPrice | currency: 'USD'}}</span>
     }
-    <svg  class="product-card__favorite" width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg  [class]="(includedInFavorites) ? 'product-card__favorite product-card__favorite_active' : 'product-card__favorite'" (click)="handleClickOnFavorite($event)" width="38" height="34" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M11.4997 2.66675C6.43717 2.66675 2.33301 6.77092 2.33301 11.8334C2.33301 21.0001 13.1663 29.3334 18.9997 31.2718C24.833 29.3334 35.6663 21.0001 35.6663 11.8334C35.6663 6.77092 31.5622 2.66675 26.4997 2.66675C23.3997 2.66675 20.658 4.20592 18.9997 6.56175C18.1544 5.35775 17.0315 4.37516 15.726 3.69716C14.4204 3.01915 12.9708 2.66571 11.4997 2.66675Z" stroke="#706E6E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>    
   </div>

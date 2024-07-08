@@ -1,0 +1,13 @@
+@if($categoryData | async; as data) {
+    <main class="category-products-page">
+    @if (data.data) {
+      <h1 class="category-products-page-title">{{data.category.title}}</h1>
+      <app-filter-elem [withDiscountCheckbox]="true"></app-filter-elem>
+    }
+    @if(filterService.filteredProducts.length > 0){
+      <app-product-list [products]="filterService.filteredProducts"></app-product-list>
+    } @else {
+      <h2 class="category-products-page-not-found">No product meets your filter criteria. <br> Please, change your filters.</h2>
+    }
+  </main>
+}

@@ -1,0 +1,70 @@
+.filter-elem {
+  margin-left: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.filter-elem label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 112px;
+  height: 36px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-txt-grey);
+  border: 1px solid var(--color-grey-divider);
+  border-radius: var(--radius-small);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-grey-divider);
+  border-radius: var(--radius-small);
+}
+
+input[type="checkbox"]:checked {
+  background-image: url("../../../assets/icons/checked.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-green);
+}
+
+.select-wrapper {
+  margin-left: 1px;
+  position: relative;
+  width: 200px;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--color-grey-divider);
+  background-color: var(--light_grey-color-gray);
+  background-image: url("../../../assets/icons/select_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+}
+
+.select-wrapper select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-txt-black);
+  border-radius: var(--radius-small);
+  background: transparent;
+  border: 0;
+  appearance: none;
+  /* remove arrow        */
+  -webkit-appearance: none;
+  /* remove arrow Chrome */
+  -moz-appearance: none;
+  /* remove arrow FF     */
+  outline: none;
+}

@@ -59,6 +59,8 @@ export class ProductItemPageComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   ngOnDestroy(): void {
-    this._subscription.unsubscribe();
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
    }
 }

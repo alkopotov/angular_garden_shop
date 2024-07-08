@@ -1,0 +1,25 @@
+<section class="filter-elem">
+  <label for="">
+    Price
+    <input type="text" [(ngModel)]="filterService.minPrice">
+    -
+    <input type="text" [(ngModel)]="filterService.maxPrice">
+  </label>
+
+  @if(withDiscountCheckbox) {
+    <label for="">
+      Discounted items
+      <input type="checkbox" [(ngModel)]="filterService.withDiscount">
+    </label>
+  }
+  
+  <label for=""> Sorted
+    <div class="select-wrapper">
+      <select [(ngModel)]="filterService.sortingOrder">
+        @for(option of sortingOptions; track $index) {
+          <option [value]="option">{{option}}</option>
+        }
+    </select>
+    </div>
+  </label>
+</section>

@@ -3,6 +3,7 @@ import { DataSourceService, Product } from '../../services/data-source.service';
 import { CurrencyPipe, DecimalPipe, PercentPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartStorageService } from '../../services/cart-storage.service';
+import { FavoritesStorageService } from '../../services/favorites-storage.service';
 
 @Component({
   selector: 'app-product-card',
@@ -17,7 +18,8 @@ export class ProductCardComponent {
   constructor(
     public dataSourceService: DataSourceService,
     private _router: Router,
-    private _cartStorageService: CartStorageService
+    private _cartStorageService: CartStorageService,
+    private _favoritesStorageService: FavoritesStorageService
   ) { }
 
   public buttonVisible: boolean = false;
@@ -52,4 +54,13 @@ export class ProductCardComponent {
     this._router.navigate(['/products', this.product.id]);
   }
 
+  public handleClickOnFavorite(event: any): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this._favoritesStorageService.handleFavorites(this.product.id);
+  }
+
+  public get includedInFavorites(): boolean {
+    return this._favoritesStorageService.includedInFavorites(this.product.id);
+  }
 }

@@ -1,0 +1,19 @@
+.category-products-page {
+  margin: 204px auto 0 auto;
+  width: 100%;
+  max-width: 1440px;
+}
+.category-products-page-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--color-txt-black);
+  padding-left: 40px;
+  margin-bottom: 40px;
+}
+
+.category-products-page-not-found {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-txt-black);
+  margin: 40px;
+}

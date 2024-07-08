@@ -15,7 +15,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 export class ProductListComponent {
   @Input() public onMainPage: boolean;
   @Input() public title: string;
-  @Input() products: Product[];
+  @Input() public products: Product[];
 
   constructor(private _router: Router) { }
 

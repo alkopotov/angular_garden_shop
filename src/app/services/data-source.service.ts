@@ -11,6 +11,11 @@ export interface Category {
   updatedAT: string;
 }
 
+export interface CategoryData {
+  category: Category;
+  data: Product[]
+} 
+
 export interface Product {
   id: number;
   title: string;
@@ -62,4 +67,7 @@ export class DataSourceService {
     return this._http.get<Product[]>(`${this._baseUrl}/products/${id}`);
   }
 
+  public getProductsByCategory(id: number): Observable<CategoryData> {
+    return this._http.get<CategoryData>(`${this._baseUrl}/categories/${id}`);
+  }
 }
