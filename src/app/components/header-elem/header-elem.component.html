@@ -8,7 +8,7 @@
       <a [routerLink]="[navLink.link]" [routerLinkActive]="(navLink.name === 'Main page') ? '' : 'active'">{{navLink.name}}</a>
     }
   </nav>
-  <a href="">
+  <a [routerLink]="['/cart']">
     <app-basket-elem></app-basket-elem>
   </a>
 </section>

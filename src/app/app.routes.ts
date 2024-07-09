@@ -8,6 +8,7 @@ import { ProductListPageComponent } from './pages/product-list-page/product-list
 import { ProductItemPageComponent } from './pages/product-item-page/product-item-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { CategoryProductsPageComponent } from './pages/category-products-page/category-products-page.component';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,10 @@ export const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesPageComponent
+  },
+  {
+    path: 'cart',
+    component: CartPageComponent
   },
   {
     path: 'products/all',

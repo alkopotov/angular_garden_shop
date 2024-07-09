@@ -1,5 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { Product } from './data-source.service';
+import { DataSourceService, Product } from './data-source.service';
 import { isPlatformBrowser } from '@angular/common';
 
 
@@ -14,7 +14,10 @@ export interface CartProduct {
 })
 export class CartStorageService {
 
-  constructor(@Inject(PLATFORM_ID) private _platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private _platformId: Object,
+    private _dataSourceService: DataSourceService,
+  ) { }
 
   public productsInCart: Record<any, number> = {};
 
@@ -52,5 +55,14 @@ export class CartStorageService {
     if (isPlatformBrowser(this._platformId)) {
       this.productsInCart = JSON.parse(localStorage.getItem('productsInCart' as string) || '{}');
     }
+  }
+
+  public get productInCartList(): CartProduct[] {
+    return Object.keys(this.productsInCart).map((id: string) => {
+      return {
+        product: this._dataSourceService.products.find((product: Product) => product.id === +id) as Product,
+        counter: this.productsInCart[`${id}`]
+      }
+    });
   }
 }
