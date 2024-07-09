@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { Product } from './data-source.service';
+import { DataSourceService, Product } from './data-source.service';
 
 
 @Injectable({
@@ -8,7 +8,9 @@ import { Product } from './data-source.service';
 })
 export class FavoritesStorageService {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private _dataSourceService: DataSourceService) { }
 
 
   private _saveToFavorites(id: number): void {
@@ -61,5 +63,9 @@ export class FavoritesStorageService {
       return products.includes(id);
     }
     return false;
+  }
+
+  public get favoritesProductList(): Product[] {
+    return this._dataSourceService.products.filter((product: Product) => this.includedInFavorites(product.id));
   }
 }

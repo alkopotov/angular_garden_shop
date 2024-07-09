@@ -1,1 +1,12 @@
-<p>favorites-page works!</p>
+@if(favoritesStorageService.productsInFavorites.length > 0) {
+  
+  <h1 class="product-list-page__title">Your favorites</h1>
+  <main class="product-list-page">
+    <app-product-list [products]="favoritesStorageService.favoritesProductList"></app-product-list>
+  </main>
+ 
+} @else {
+  <div class="product-list-page__no-products">
+  <h1>You have not added any product to your favorites</h1>
+  </div>
+}

@@ -25,6 +25,10 @@ export class FilterService {
 
   public withDiscount: boolean = false;
 
+  public get hasProductsToFilter(): boolean {
+    return this._products.length > 0
+  }
+  
   public get filteredProducts(): Product[] {
 
     let result = [...this._products].filter((product: Product) => {
