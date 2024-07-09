@@ -41,6 +41,8 @@ export class SalesPageComponent implements OnInit, AfterViewInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.filterService.withDiscount = false;
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
   }
-
 }

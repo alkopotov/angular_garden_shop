@@ -1,1 +1,14 @@
-<p>product-list-page works!</p>
+@if($products | async; as products) {
+  <h1 class="product-list-page__title">All products</h1>
+  <main class="product-list-page">
+   
+      <app-filter-elem [withDiscountCheckbox]="true"></app-filter-elem>
+
+    <app-product-list [products]="filterService.filteredProducts"></app-product-list>
+  </main>
+} @else {
+  <div class="product-list-page__spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
