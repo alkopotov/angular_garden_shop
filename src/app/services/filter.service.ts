@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataSourceService, Product } from './data-source.service';
+import {  Product } from './data-source.service';
 
 
 export type SortingOrder = 'default' | 'name: a-z' | 'name: z-a' | 'price: high-low' | 'price: low-high';
@@ -9,7 +9,7 @@ export type SortingOrder = 'default' | 'name: a-z' | 'name: z-a' | 'price: high-
 })
 export class FilterService {
 
-  constructor(private _dataSourceService: DataSourceService) { }
+  constructor() { }
 
   private _products: Product[] = [];
   public minPrice: number;
