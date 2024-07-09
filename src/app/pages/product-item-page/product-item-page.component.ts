@@ -5,6 +5,7 @@ import { CartStorageService } from '../../services/cart-storage.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AsyncPipe, CurrencyPipe, PercentPipe } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoggerViewedService } from '../../services/logger-viewed.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class ProductItemPageComponent implements OnInit, OnDestroy, AfterViewIni
     private _cartStorageService: CartStorageService,
     public dataSourceService: DataSourceService,
     private _routes: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private _loggerViewedService: LoggerViewedService,
 
   ) { }
 
@@ -52,8 +54,11 @@ export class ProductItemPageComponent implements OnInit, OnDestroy, AfterViewIni
 
   ngAfterViewInit(): void {
     this._subscription = this.product$.subscribe((data: any) => {
+      
       if (data.message === "product not found") {
         this._router.navigate(['/not-found']);
+      } else {
+        this._loggerViewedService.handleViewed(data[0].id);
       }
     });
   }

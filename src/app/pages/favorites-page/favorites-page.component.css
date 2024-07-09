@@ -1,0 +1,40 @@
+.favorites-page__title {
+  max-width: 1440px;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 244px auto 40px auto;
+  padding-left: 40px;
+}
+
+.favorites-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.favorites-page__no-products {
+  max-width: 1440px;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 244px auto 40px auto;
+}
+
+.favorites-page__button {
+ background-color: var(--color-green);
+ color: white;
+ padding: 16px 32px;
+ border: none;
+ border-radius: var(--radius-small);
+ margin-left: 40px;
+ cursor: pointer;
+ font-size: 20px;
+ font-weight: 600;
+}
+
+.favorites-page__viewed-title {
+  max-width: 1440px;
+  font-size: 48px;
+  font-weight: 600;
+  margin: 40px auto 40px auto;
+  padding-left: 40px;
+}

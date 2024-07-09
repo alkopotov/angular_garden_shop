@@ -9,12 +9,12 @@ import { DataSourceService, Product } from './data-source.service';
 export class FavoritesStorageService {
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private _platformId: Object,
     private _dataSourceService: DataSourceService) { }
 
 
   private _saveToFavorites(id: number): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this._platformId)) {
       let products = JSON.parse(localStorage.getItem('favorites') as string) || [];
       if (!products.includes(id)) {
         products.push(id);
@@ -24,7 +24,7 @@ export class FavoritesStorageService {
   }
 
   private _deleteFromFavorites(id: number): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this._platformId)) {
       let products = JSON.parse(localStorage.getItem('favorites') as string) || [];
       products = products.filter((product: number) => product !== id);
       localStorage.setItem('favorites', JSON.stringify(products));
@@ -33,7 +33,7 @@ export class FavoritesStorageService {
 
   // Меняет состояние в избранном по переданному id
   public handleFavorites(id: number): void {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this._platformId)) {
       if (this.includedInFavorites(id)) {
         this._deleteFromFavorites(id);
       } else {
@@ -44,7 +44,7 @@ export class FavoritesStorageService {
 
   // Возвращает массив id продуктов из избранного
   public get productsInFavorites(): number[] {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this._platformId)) {
       let products = JSON.parse(localStorage.getItem('favorites') as string) || [];
       return products;
     }
@@ -58,7 +58,7 @@ export class FavoritesStorageService {
 
   // Проверяет наличие продукта в избранном по переданному id
   public includedInFavorites(id: number): boolean {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this._platformId)) {
       let products = JSON.parse(localStorage.getItem('favorites') as string) || [];
       return products.includes(id);
     }

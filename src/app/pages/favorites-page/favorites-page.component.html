@@ -1,12 +1,18 @@
 @if(favoritesStorageService.productsInFavorites.length > 0) {
-  
-  <h1 class="product-list-page__title">Your favorites</h1>
-  <main class="product-list-page">
+  <h1 class="favorites-page__title">Your favorites</h1>
+  <main class="favorites-page">
     <app-product-list [products]="favoritesStorageService.favoritesProductList"></app-product-list>
   </main>
  
 } @else {
-  <div class="product-list-page__no-products">
-  <h1>You have not added any product to your favorites</h1>
+  <div class="favorites-page__no-products">
+    <h1 class="favorites-page__title">You have not added any product to your favorites</h1>
+    <button class="favorites-page__button" (click)="handleContinueShopping()">Continue shopping</button>
   </div>
+  @if(loggerViewedService.productsInViewed > 0) {
+    <div class="favorites-page-viewed">
+      <h2 class="favorites-page__viewed-title">...but you have viewed these products:</h2>
+      <app-product-list [products]="loggerViewedService.viewedProductList"></app-product-list>
+    </div>
+  }
 }
