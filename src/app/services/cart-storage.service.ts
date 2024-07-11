@@ -43,11 +43,20 @@ export class CartStorageService {
     }
   }
 
+  public deleteItemFromCart(id: number): void {
+    if(isPlatformBrowser(this._platformId)) {
+      if (this.hasProductsWithId(id)) {
+        delete this.productsInCart[`${id}`];
+        localStorage.setItem('productsInCart', JSON.stringify(this.productsInCart));
+      }
+    }
+  }
+
   public get productPositionsCount(): number {
     return Object.keys(this.productsInCart).length;
   }
 
-  public get totalItenmsCount(): number {
+  public get totalItemsCount(): number {
     return Object.values(this.productsInCart).reduce((a: number, b: number) => a + b, 0);
   }
 
@@ -55,6 +64,10 @@ export class CartStorageService {
     if (isPlatformBrowser(this._platformId)) {
       this.productsInCart = JSON.parse(localStorage.getItem('productsInCart' as string) || '{}');
     }
+  }
+
+  public get orderTotal(): number {
+    return this.productInCartList.reduce((a: number, b: CartProduct) => a + (b.product.discont_price || b.product.price) * b.counter, 0);
   }
 
   public get productInCartList(): CartProduct[] {

@@ -1,0 +1,42 @@
+<div class="cart-item">
+  <div class="cart-item__close-button" (click)="handleRemoveFromCart()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 6L18 18" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M6 18L18 6" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <div class="cart-item__image-wrapper">
+    <div class="cart-item__image"
+         [style.background-image]="'url(' + dataSourceService.baseUrl  + cartProduct.product.image + ')'"></div>
+    </div>
+    <div class="cart-item__data">
+    <h2 class="cart-item__title">{{cartProduct.product.title}}</h2>
+
+    <div class="cart-item__price">
+      <div class="cart-item__price-counter">
+        <div class="cart-item__price-counter-button-decr" (click)="handleDecreaseCounter()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        {{cartProduct.counter}}
+        <div class="cart-item__price-counter-button-incr" (click)="handleIncreaseCounter()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 5V19" stroke="#8B8B8B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="cart-item__price-final">
+        {{(cartProduct.product.discont_price || cartProduct.product.price) * cartProduct.counter | currency}}
+      </div>
+      @if(cartProduct.product.discont_price) {
+        <div class="cart-item__price-initial">
+          {{cartProduct.product.price * cartProduct.counter | currency}}
+        </div>
+      }
+    </div>
+  </div>
+  
+</div>

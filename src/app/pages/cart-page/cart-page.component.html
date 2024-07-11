@@ -1,8 +1,25 @@
-<div class="cart-page-header">
-  <h1 class="cart-page-header__title">Shopping cart</h1>
-  <div class="cart-page-header__line"></div>
-  <button class="cart-page-header__button" (click)="handleBackToStore()">Back to the store</button>
+<div class="cart-page__header">
+  <h1 class="cart-page__header-title">Shopping cart</h1>
+  <div class="cart-page__header-line"></div>
+  <button class="cart-page__header-button" (click)="handleBackToStore()">Back to the store</button>
 </div>
 @if(cartStorageService.productInCartList.length){
+  <main class="cart-page__content">
+    <section class="cart-page__content-product-list">
+    @for(cartProduct of cartStorageService.productInCartList; track $index) {
+      <app-cart-item [cartProduct]="cartProduct"></app-cart-item>
+    }
+    </section>
+    <section class="cart-page__order-summary">
+      <h2 class="cart-page__order-summary-title">Order details</h2>
+      <p class="cart-page__order-summary-item">{{cartStorageService.totalItemsCount}} items</p>
+      <p class="cart-page__order-summary-item">Total <span>{{cartStorageService.orderTotal | currency}}</span></p>
+    </section>
+  </main>
+} @else {
+  <div class="cart-page__no-products">
+    <h1 class="cart-page__title">Your cart is empty</h1>
+
+  </div>  
 
 }

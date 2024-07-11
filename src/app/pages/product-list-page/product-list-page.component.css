@@ -4,6 +4,7 @@
   font-weight: 700;
   margin: 244px auto 40px auto;
   padding-left: 40px;
+  color: var(--color-txt-black);
 }
 
 .product-list-page {
