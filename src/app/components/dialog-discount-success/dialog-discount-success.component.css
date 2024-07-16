@@ -1,0 +1,26 @@
+.dialog-discount {
+  position: relative;
+  background-color: var(--color-green);
+  color: white;
+  width: 548px;
+  padding: 32px;
+  border-radius: var(--radius-big);
+}
+
+.dialog-discount__close-button {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.dialog-discount__title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.dialog-discount__text {
+  font-size: 20px;
+  font-weight: 600;
+}
