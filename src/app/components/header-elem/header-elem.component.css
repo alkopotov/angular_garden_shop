@@ -38,4 +38,42 @@
   color: var(--color-green);
 }
 
+@media (max-width: 800px) {
+  .header-content {
+    padding: 0 30px;
+  }
+
+  .nav {
+    font-size: 18px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    padding: 0 16px;
+  }
+
+  .nav {
+    font-size: 16px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header-wrapper {
+    height: 80px;
+  }
+  .header-content {
+    padding: 0 8px;
+  }
+  .nav {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+}
+  
+
 

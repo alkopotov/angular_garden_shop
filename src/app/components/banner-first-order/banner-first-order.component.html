@@ -2,10 +2,10 @@
   <h2 class="banner-first-order__title">5% off on the first order</h2>
   <div class="banner-first-order__content">
     <img src="assets/images/banner-first-order/decoration.png" alt="">
-    <form action="" class="banner-first-order__form" (submit)="handleSubmit($event)">
-      <input type="text" placeholder="Name" class="banner-first-order__input">
-      <input type="text" placeholder="Phone number" class="banner-first-order__input">
-      <input type="text" placeholder="Email" class="banner-first-order__input">
+    <form class="banner-first-order__form" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Name" class="banner-first-order__input" formControlName="name">
+      <input type="text" placeholder="Phone number" class="banner-first-order__input" formControlName="phone">
+      <input type="text" placeholder="Email" class="banner-first-order__input" formControlName="email">
       <input type="submit" name="" id="" value="Get a discount" class="banner-first-order__button">
     </form>
   </div>

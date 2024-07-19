@@ -17,3 +17,18 @@
   font-size: 12px;
   font-weight: 600;
 }
+
+@media (max-width: 480px) {
+  .basket-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .basket-counter {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+}
