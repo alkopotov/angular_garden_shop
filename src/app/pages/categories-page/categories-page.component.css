@@ -1,3 +1,10 @@
 .categories-page {
   margin-top: 244px;
 }
+
+@media (max-width: 480px) {
+  .categories-page {
+    margin-top: 120px;
+  }
+  
+}

@@ -64,7 +64,8 @@
     padding: 20px 20px 0 20px;
   }
   .banner-discount__title {
-    font-size: 36px;
+    font-size: 40px;
+    line-height: 1.1;
   }
   .banner-discount__button {
    height: 50px;

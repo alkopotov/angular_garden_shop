@@ -25,3 +25,23 @@
   text-align: center;
   color: var(--color-txt-black);
 }
+
+@media (max-width: 1100px) {
+  .category-card__image {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .category-card__wrapper {
+    gap: 8px;
+  }
+  .category-card__image {
+    height: 240px;
+  }
+
+  .category-card__title {
+    font-size: 18px;
+  }
+}
