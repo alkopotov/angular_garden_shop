@@ -11,3 +11,10 @@
     height: 36px;
   } 
 }
+
+@media (max-width: 480px) {
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+}

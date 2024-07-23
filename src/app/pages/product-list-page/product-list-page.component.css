@@ -20,3 +20,12 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 600px) {
+
+  .product-list-page__title {
+    font-size: 32px;
+    margin-top: 120px;
+  }
+  
+}

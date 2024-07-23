@@ -71,3 +71,10 @@ input[type="checkbox"]:checked {
   /* remove arrow FF     */
   outline: none;
 }
+
+@media (max-width: 800px) {
+  .filter-elem {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
