@@ -219,6 +219,7 @@
 
   .cart-page__no-products, .cart-page__viewed-title {
     padding-left: 16px;
+    padding-right: 16px;
   }
 
 }
