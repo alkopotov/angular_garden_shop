@@ -24,7 +24,6 @@
 
 .footer-elem__data-item {
   display: flex;
-  height: 100%;
   flex-direction: column;
   gap: 16px;
   padding: 32px;
