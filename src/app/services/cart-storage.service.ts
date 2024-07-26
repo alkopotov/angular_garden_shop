@@ -67,7 +67,7 @@ export class CartStorageService {
   }
 
   public get orderTotal(): number {
-    return this.productInCartList.reduce((a: number, b: CartProduct) => a + (b.product.discont_price || b.product.price) * b.counter, 0);
+    return this.productInCartList.reduce((a: number, b: CartProduct) => a + (b.product!.discont_price || b.product.price) * b.counter, 0);
   }
 
   public get productInCartList(): CartProduct[] {

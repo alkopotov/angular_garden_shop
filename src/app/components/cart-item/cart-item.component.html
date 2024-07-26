@@ -27,15 +27,16 @@
           </svg>
         </div>
       </div>
-
-      <div class="cart-item__price-final">
-        {{(cartProduct.product.discont_price || cartProduct.product.price) * cartProduct.counter | currency}}
-      </div>
-      @if(cartProduct.product.discont_price) {
-        <div class="cart-item__price-initial">
-          {{cartProduct.product.price * cartProduct.counter | currency}}
+      <div class="cart-item__prices-area">
+        <div class="cart-item__price-final">
+          {{(cartProduct.product.discont_price || cartProduct.product.price) * cartProduct.counter | currency}}
         </div>
-      }
+        @if(cartProduct.product.discont_price) {
+          <div class="cart-item__price-initial">
+            {{cartProduct.product.price * cartProduct.counter | currency}}
+          </div>
+        }
+      </div>
     </div>
   </div>
   

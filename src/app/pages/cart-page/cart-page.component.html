@@ -28,10 +28,8 @@
     <button class="cart-page__no-products-button" (click)="handleBackToStore()">Continue shopping</button>
   </div> 
   @if(loggerViewedService.productsInViewed > 0) {
-      
     <h2 class="cart-page__viewed-title">...or perhaps you wish to return to products you have already viewed:</h2>
     <app-product-list [products]="loggerViewedService.viewedProductList"></app-product-list>
-
 }
 
 }

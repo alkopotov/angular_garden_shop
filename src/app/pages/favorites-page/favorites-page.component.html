@@ -5,10 +5,8 @@
   </main>
  
 } @else {
-  <div class="favorites-page__no-products">
     <h1 class="favorites-page__title">You have not added any product to your favorites</h1>
     <button class="favorites-page__button" (click)="handleContinueShopping()">Continue shopping</button>
-  </div>
   @if(loggerViewedService.productsInViewed > 0) {
     <div class="favorites-page-viewed">
       <h2 class="favorites-page__viewed-title">...but you have viewed these products:</h2>

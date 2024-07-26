@@ -74,6 +74,10 @@
   border-radius: var(--radius-small) 0 0 var(--radius-small);
 }
 
+.cart-item__prices-area {
+  display: flex;
+  align-items: baseline;
+}
 .cart-item__price-final {
   font-size: 40px;
   font-weight: 600;
@@ -87,4 +91,126 @@
   color: var(--color-txt-grey);
   text-decoration: line-through;
   margin-left: 16px;
+}
+
+@media (max-width: 1280px) {
+
+  .cart-item {
+    height: 160px;
+  }
+  .cart-item__image-wrapper {
+    width: 180px;
+  }
+
+  .cart-item__image {
+    min-width: 160px;
+  }
+
+  .cart-item__data {
+    padding: 16px 24px;
+  }
+
+  .cart-item__close-button {
+    top: 16px;
+    right: 16px;
+  }
+  
+}
+
+@media (max-width: 1240px) {
+
+  .cart-item__price-final {
+    margin-left: 18px;
+    font-size: 32px;
+  }
+
+  .cart-item__price-initial {
+    margin-left: 8px;
+    font-size: 18px;
+  }
+
+  .cart-item__title {
+    font-size: 18px;
+    padding-right: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    align-self: stretch;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1160px) {
+
+  .cart-item__image-wrapper {
+    width: 140px;
+  }
+
+  .cart-item__image {
+    min-width: 120px;
+  }
+  .cart-item__price-counter {
+    font-size: 18px;
+    width: 130px;
+    height: 44px;
+  }
+
+  .cart-item__price-counter-button-decr, .cart-item__price-counter-button-incr {
+    width: 44px;
+  }
+}
+
+@media (max-width: 620px) {
+
+  .cart-item__image-wrapper {
+    width: 130px;
+    padding: 8px;
+  }
+
+  .cart-item__close-button {
+    top: 8px;
+    right: 8px;
+  }
+
+  .cart-item__image {
+    min-width: 114px;
+  }
+
+  .cart-item__data {
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .cart-item__title {
+    padding-right: 24px;
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    align-self: stretch;
+    overflow: hidden;
+  }
+
+  .cart-item__price {
+    margin-top: 14px;
+    flex-direction: column;
+  }
+
+  .cart-item__price-final {
+    font-size: 24px;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .cart-item__prices-area {
+    justify-content: flex-start;
+  }
+
+
+
+  
 }
