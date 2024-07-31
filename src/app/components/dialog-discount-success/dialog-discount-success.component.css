@@ -24,3 +24,25 @@
   font-size: 20px;
   font-weight: 600;
 }
+
+@media (max-width: 600px) {
+
+  .dialog-discount {
+    width: 90%;
+    margin: auto;
+  }
+
+  .dialog-discount__close-button {
+    top: 16px;
+    right: 16px;   
+  }
+  .dialog-discount__title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .dialog-discount__text {
+    font-size: 16px;
+  }
+  
+}

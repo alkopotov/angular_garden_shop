@@ -55,4 +55,8 @@ export class FilterService {
     return result;
   }
 
+  public resetFilters(): void {
+    this.withDiscount = false;
+    this.sortingOrder = 'default';
+  }
 }

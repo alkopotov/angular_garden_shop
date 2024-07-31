@@ -1,9 +1,10 @@
-import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
 import { Product } from '../../services/data-source.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Router } from '@angular/router';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { isPlatformBrowser } from '@angular/common';
+import { FilterService } from '../../services/filter.service';
 
 
 @Component({
@@ -13,14 +14,15 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   @Input() public onMainPage: boolean;
   @Input() public title: string;
   @Input() public products: Product[];
 
   constructor(
     @Inject(PLATFORM_ID) private _platformId: Object,
-    private _router: Router
+    private _router: Router,
+    private _filterService: FilterService
   ) { }
 
   public maxCardsOnpage: number = 8;
@@ -67,5 +69,9 @@ export class ProductListComponent {
 
   public handleClickAllSales(): void {
     this._router.navigate(['/sales']);
+  }
+
+  ngOnInit(): void {
+    this._filterService.resetFilters();
   }
 }

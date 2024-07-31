@@ -37,6 +37,7 @@ export class BannerFirstOrderComponent implements OnInit {
     } else {
     console.log(this.dataForm.value);
     this._dialogDispatcher.openDialog('discount');
+    this.dataForm.reset();
     }
   }
 }
