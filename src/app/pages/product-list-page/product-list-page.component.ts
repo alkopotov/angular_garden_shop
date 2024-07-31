@@ -27,6 +27,8 @@ export class ProductListPageComponent implements OnInit, AfterViewInit, OnDestro
 
   ngOnInit(): void {
     this.$products = this.dataSourceService.getAllProducts();
+    this.filterService.withDiscount = false;
+    this.filterService.sortingOrder = 'default';
   }
 
   ngAfterViewInit(): void {

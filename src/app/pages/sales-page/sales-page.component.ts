@@ -29,6 +29,7 @@ export class SalesPageComponent implements OnInit, AfterViewInit, OnDestroy{
 
   ngOnInit(): void {
   this.$products = this.dataSourceService.getAllProducts();
+  this.filterService.sortingOrder = 'default';
   }
 
   ngAfterViewInit(): void {

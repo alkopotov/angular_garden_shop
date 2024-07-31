@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { Product } from '../../services/data-source.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { FilterService } from '../../services/filter.service';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
   @Input() public onMainPage: boolean;
   @Input() public title: string;
   @Input() public products: Product[];
@@ -71,7 +71,4 @@ export class ProductListComponent implements OnInit {
     this._router.navigate(['/sales']);
   }
 
-  ngOnInit(): void {
-    this._filterService.resetFilters();
-  }
 }
